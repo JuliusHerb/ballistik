@@ -1,8 +1,3 @@
-/*
-* ballistik. For description see https://github.com/jgherb/ballistik/blob/master/README.md
-* @author: Julius Herb
-* @version: 2015_10_14 (v0.1)
-*/
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -31,14 +26,18 @@ int main(int argc, char* argv[])
     double sx0 = 0; //Startpunkt X-Koordinate (in m)
     double sy0 = 1.7+0.4; //Startpunkt Y-Koordinate (in m)
     double dt = 0.0001; //(Zeitintervall in s)
+    double hn = 0; //Hoehe ueber NormalNull
     bool luftwiderstand = true;
+    bool gravitationsabnahme = false; //Not supported yet
+    bool erdkruemmung = false;
     bool detailoutput = true;
     bool shelloutput = false;
     bool fileoutput = true;
     string filepath = "output.csv";
-    bool speedmode = false; //no storage of acceleration
-    int outputmode = 1; //0=s;1=sx,sy;2=v;3=vx,vy;4=a;5=ax,ay
+    bool speedmode = true; //no storage of acceleration
+    int outputmode = 0; //0=s;1=sx,sy;2=v;3=vx,vy;4=a;5=ax,ay
     //Parameter END
+    double G = 
     double K = rho*cw*A/2;
     double vx0 = cos(alpha*PI/180)*ta*Fa/m;
     double vy0 = ta*(sin(alpha*PI/180)*Fa/m-g);
