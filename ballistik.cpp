@@ -36,8 +36,8 @@ int main(int argc, char* argv[])
     bool shelloutput = false;
     bool fileoutput = true;
     string filepath = "output.csv";
-    bool speedmode = true; //no storage of acceleration
-    int outputmode = 0; //0=s;1=sx,sy;2=v;3=vx,vy;4=a;5=ax,ay
+    bool speedmode = false; //no storage of acceleration
+    int outputmode = 1; //0=s;1=sx,sy;2=v;3=vx,vy;4=a;5=ax,ay
     //Parameter END
     double K = rho*cw*A/2;
     double vx0 = cos(alpha*PI/180)*ta*Fa/m;
